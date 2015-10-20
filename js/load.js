@@ -8,7 +8,7 @@ var loadState= {
 			game.load.spritesheet('player', 'assets/Full_Sheet.png', 64, 64);
 		//game.load.image('player', 'assets/Full_Sheet.png');
 		game.load.image('win', 'assets/Bullet.png');
-		mysprite = this.game.add.sprite(80, 80, 'player');
+		mysprite = this.game.add.sprite(40, 80, 'player');
 		mysprite.frame = 15;
 		
 	var map;
