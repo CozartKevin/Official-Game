@@ -18,7 +18,7 @@ update: function(){
 	 }else if(this.keyboard.isDown(Phaser.Keyboard.D)){
 		this.player.body.velocity.x = 175;
 	 } else{
-		 this.player.body.celocity.x = 0;
+		 this.player.body.velocity.x = 0;
 	 }
 	 
 	 if(this.keyboard.isDown(Phaser.Keyboard.W)){
