@@ -1,6 +1,10 @@
 var playState = {
 create: function(){
 	
+	
+	
+	
+	
 	this.keyboard = game.input.keyboard;
 	
 	this.player = game.add.sprite(16,16, 'player');
@@ -11,8 +15,10 @@ create: function(){
 	
 },
 update: function(){
+	scrollPos = scrollPos + 0.25;
 	 game.physics.arcade.overlap(this.player, this.win, this.Win, null, this);
-	 
+	game.camera.x = scrollPos;
+	backGround.position.x = Math.round(scrollPos * 0.5);
 	 if(this.keyboard.isDown(Phaser.Keyboard.A)){
 		 this.player.body.velocity.x = -175;
 	 }else if(this.keyboard.isDown(Phaser.Keyboard.D)){
@@ -31,7 +37,7 @@ update: function(){
 	
 },
 Win: function(){
-	game.state.start('win');
+	game.state.start('win',false);
 	
 }
 }

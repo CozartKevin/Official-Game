@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="BDHsJs7" tilewidth="32" tileheight="32" tilecount="48">
+  <image source="../../fifty art/BDHsJs7.png" width="256" height="192"/>
+ </tileset>
+ <layer name="Test" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0asRACAMREEMihKQ9N8jFMBHQAyzO/NUXC4lAOBXeVQWze7EWe1wiji7X9sjTn0cd9rjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+0QHX2wZO
+  </data>
+ </layer>
+</map>
