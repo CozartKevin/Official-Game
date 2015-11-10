@@ -20,21 +20,21 @@ create: function(){
 	//this.player.body.collide = true;
 	//this.player.body.bounce.y = 0.8;
 	//this.player.body.allowGravity = true;
-	  game.camera.follow(backGround);
+	 // game.camera.follow(backGround);
 	this.win = game.add.sprite(256, 256, 'win');
 	game.physics.enable(this.win, Phaser.Physics.ARCADE);
 
-	this.player.boundsPadding = -10;
+	//this.player.boundsPadding = -10;
 },
 update: function(){
 	game.physics.arcade.collide(this.player, layer);
 	
 	scrollPos = scrollPos + 0.25;
 	 game.physics.arcade.overlap(this.player, this.win, this.Win, null, this);
-	backGround.position.x = (-scrollPos);
+	backGround.position.x = (scrollPos);
 	game.camera.x = scrollPos;
   
-	backGround.tilePosition.x = (-1);
+	backGround.tilePosition.x = (scrollPos * -0.25);
 	
 	
 	if(this.keyboard.isDown(Phaser.Keyboard.A)){
