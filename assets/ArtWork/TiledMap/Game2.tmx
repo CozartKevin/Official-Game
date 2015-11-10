@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="6">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="18">
  <tileset firstgid="1" name="phase-2" tilewidth="32" tileheight="32" tilecount="350">
   <image source="phase-2.png" width="800" height="448"/>
  </tileset>
@@ -10007,4 +10007,14 @@
    <tile gid="0"/>
   </data>
  </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="10" x="-3.0303" y="724.242" width="2048.48" height="96.9697" visible="0"/>
+  <object id="11" x="831" y="691" width="160" height="31" visible="0"/>
+  <object id="12" x="1024" y="661" width="97" height="63" visible="0"/>
+  <object id="13" x="1154" y="630" width="223" height="93" visible="0"/>
+  <object id="14" x="1214" y="566" width="96" height="60" visible="0"/>
+  <object id="15" x="1410" y="661" width="93" height="61" visible="0"/>
+  <object id="16" x="1535" y="693" width="98" height="31" visible="0"/>
+  <object id="17" x="407" y="744"/>
+ </objectgroup>
 </map>

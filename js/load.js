@@ -13,15 +13,14 @@ var loadState= {
 		game.load.image('win', 'assets/Bullet.png');
 		//mysprite = this.game.add.sprite(64, 64, 'player');
 		//mysprite.frame = 50;
-		
-		
+
 	},
 
 	create: function(){
 	
 		
 		
-		
+			
 		game.state.start('menu');
 		
 	}

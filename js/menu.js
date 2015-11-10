@@ -5,7 +5,9 @@ var menuState = {
 		
 		map = game.add.tilemap('Game2');
 		map.addTilesetImage('phase-2', 'tiles');
-		backGround = game.add.sprite(0,0, 'backGround')
+		map.setCollisionByExclusion([0], true, 'World1')
+
+		backGround = game.add.tileSprite(0,0,800,600, 'backGround')
 		backGround.scale.y = 1.5;
 		backGround.sendToBack();
 		
