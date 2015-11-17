@@ -13,7 +13,8 @@ var loadState= {
 		game.load.image('win', 'assets/Bullet.png');
 		//mysprite = this.game.add.sprite(64, 64, 'player');
 		//mysprite.frame = 50;
-
+		game.load.image('bullet', 'assets/bullet.png');
+		
 	},
 
 	create: function(){

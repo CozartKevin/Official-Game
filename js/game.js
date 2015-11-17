@@ -7,6 +7,9 @@ var map;
 var layer;
 var backGround;
 var scrollPos = 0.0;
+var bullets;
+var fireRate = 300;
+var nextFire = 0.5;
 
 game.state.add('boot', bootState);
 game.state.add('load', loadState);
