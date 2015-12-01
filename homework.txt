@@ -1,0 +1,2 @@
+fix issues with enemypool not doing animations
+fix issues with shooting one enemy and all explode.

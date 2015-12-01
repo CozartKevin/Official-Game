@@ -41,20 +41,6 @@ this.enemy = game.add.sprite((this.player.x + 475), 450, 'enemy');
     this.enemyPool.setAll('outOfBoundsKill', true);
     this.enemyPool.setAll('checkWorldBounds', true);
 
-function increaseScore(totalScore,CurrentScore){
-	if(this.enemyFacing == 'right'){
-		this.enemy.animations.play('die_right',15, false, true);
-		
-	} else{
-		this.enemy.animations.play('die_left',15, false, true);
-		
-	}
-game.time.events.remove(moveEnemy);
-	updateScore();
-	generateEnemy();
-
-	
-}	
 
     // Set the animation for each sprite
     this.enemyPool.forEach(function (enemy) {
@@ -67,7 +53,7 @@ game.time.events.remove(moveEnemy);
 		});
 	this.nextEnemyAt = 0;
     this.enemyDelay = 2500;
-	this.physics.arcade.overlap(bullets,this.enemyPool, increaseScore, null, this);
+	
 	this.enemy.animations.add('walk_right', [0,1,2,3], 3, true);
 	this.enemy.animations.add('walk_left', [6,7,8,9], 3, true);
 	this.enemy.animations.add('die_right', [12,13,14,15,16,17], 15, false);
@@ -109,14 +95,15 @@ update: function(){
       enemy.reset(this.rnd.integerInRange(scrollPos + 300, scrollPos + 600), 400);
       // also randomize the speed
 	}
-   if(this.enemyFacing == 'right'){
-		enemy.play('die_right');
-		enemy.body.velocity.x = 25;
-		} else {
-			enemy.play('die_left');
-			enemy.body.velocity.x = -25;
-		 
-    }
+	
+   //if(this.enemyFacing == 'right'){
+	//	this.enemy.play('die_right');
+	//	this.enemy.body.velocity.x = 25;
+	//	} else {
+	//		this.enemy.animations.play('die_left');
+	//		this.enemy.body.velocity.x = -25;
+	//	 
+   // }
 	
 	function generateEnemy(){
 		
@@ -167,17 +154,35 @@ update: function(){
 		//this.enemy.animations.stop();
 	}
  }
+ 
+ 	
+function increaseScore(totalScore,CurrentScore){
+	if(this.enemyFacing == 'right'){
+		this.enemy.animations.play('die_right',15, false, true);
+		
+	} else{
+		this.enemy.animations.play('die_left',15, false, true);
+		
+	}
+game.time.events.remove(moveEnemy);
+	updateScore();
+	generateEnemy();
+
+	
+}	
+
+ 
 game.time.events.loop(Phaser.Timer.SECOND *3,moveEnemy, this); 
 	
 	scrollPos = scrollPos + 0.25;
-	//game.physics.arcade.overlap(bullets, this.enemy, increaseScore, null,this);
-
+	game.physics.arcade.overlap(bullets, this.enemy, increaseScore, null,this);
+	game.physics.arcade.overlap(bullets, this.enemyPool, increaseScore, null, this);
+	
 	if(isFirstRun == true){
 		this.enemy.animations.play('walk_left',3,true,false);
 		enemy.body.velocity.x = -25
 		isFirstRun = false;
 	}
-	
 	
 	
 
