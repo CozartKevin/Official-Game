@@ -45,12 +45,13 @@ this.enemy = game.add.sprite((this.player.x + 475), 450, 'enemy');
     // Set the animation for each sprite
     this.enemyPool.forEach(function (enemy) {
 
-	enemy.animations.add('walk_right', [0,1,2,3], 3, true);
-	enemy.animations.add('walk_left', [6,7,8,9], 3, true);
-	enemy.animations.add('die_right', [12,13,14,15,16,17], 15, false);
-	enemy.animations.add('die_left', [18,19,20,21,22,23], 15, false);
-	enemy.body.velocity.x = -25;
-		});
+		enemy.animations.add('walk_right', [0,1,2,3], 3, true);
+		enemy.animations.add('walk_left', [6,7,8,9], 3, true);
+		enemy.animations.add('die_right', [12,13,14,15,16,17], 15, false);
+		enemy.animations.add('die_left', [18,19,20,21,22,23], 15, false);
+		enemy.body.velocity.x = -25;
+	});
+	
 	this.nextEnemyAt = 0;
     this.enemyDelay = 2500;
 	
@@ -59,7 +60,7 @@ this.enemy = game.add.sprite((this.player.x + 475), 450, 'enemy');
 	this.enemy.animations.add('die_right', [12,13,14,15,16,17], 15, false);
 	this.enemy.animations.add('die_left', [18,19,20,21,22,23], 15, false);
 this.enemyFacing = 'left';
-	game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
+	game.physics.enable(this.enemy , Phaser.Physics.ARCADE);
 	this.enemy.anchor.setTo(0.5,0.5);
 	this.enemy.range = 5;
 	isFirstRun = true;
@@ -87,6 +88,14 @@ update: function(){
 	game.physics.arcade.collide(this.enemyPool, layer);
 	game.physics.arcade.collide(this.enemy, layer);
 	
+	
+	this.enemyPool.forEach(function (enemy) {
+
+		//enemy.animations.play('walk_right', [0,1,2,3], 3, true);
+		
+		
+		enemy.body.velocity.x = -25;
+	});
 	
 	if (this.nextEnemyAt < this.time.now && this.enemyPool.countDead() > 0) {
       this.nextEnemyAt = this.time.now + this.enemyDelay;
@@ -166,8 +175,7 @@ function increaseScore(totalScore,CurrentScore){
 	}
 game.time.events.remove(moveEnemy);
 	updateScore();
-	generateEnemy();
-
+	
 	
 }	
 
