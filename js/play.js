@@ -31,6 +31,10 @@ this.CurrentScore.fixedToCamera = true;
 
 	
 	//enemy code	
+//	this.enemy = game.add.group();
+//	this.enemy.setAll('checkWorldBoudns', true);
+//	this.enemy.setAll('outOfBoundsKill', true);
+//	this.enemy.createMultiple(15, 'enemy');
 	this.enemy = game.add.sprite((this.player.x + 475), 400, 'enemy');
 	this.enemy.animations.add('walk_right', [0,1,2,3], 3, true);
 	this.enemy.animations.add('walk_left', [7,8,9,10], 3, true);
@@ -62,18 +66,21 @@ update: function(){
 	game.physics.arcade.collide(this.enemy, layer);
 	
 	function generateEnemy(){
-			
-		this.enemy = game.add.sprite(scrollPos + 500, 400, 'enemy');
-	this.enemy.animations.add('walk_right', [0,1,2,3], 3, true);
-	this.enemy.animations.add('walk_left', [7,8,9,10], 3, true);
-	this.enemy.animations.add('die_right', [12,13,14,15,16,17], 3, false);
-	this.enemy.animations.add('die_left', [18,19,20,21,22,23], 3, false);
-	this.enemyFacing = 'left';
-	game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
-	this.enemy.anchor.setTo(0.5,0.5);
-	this.enemy.rangeLeft = 15;
-	this.enemy.rangeRight = 15;
-	game.physics.arcade.collide(this.enemy, layer);
+			this.enemy.reset(scrollPos + 400, 400);
+		
+//		this.enemy = game.add.sprite(scrollPos + 500, 400, 'enemy');
+//	this.enemy.animations.add('walk_right', [0,1,2,3], 3, true);
+//	this.enemy.animations.add('walk_left', [7,8,9,10], 3, true);
+//	this.enemy.animations.add('die_right', [12,13,14,15,16,17], 3, false);
+//	this.enemy.animations.add('die_left', [18,19,20,21,22,23], 3, false);
+//	this.enemyFacing = 'left';
+//	game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
+	
+//	this.enemy.anchor.setTo(0.5,0.5);
+//	this.enemy.rangeLeft = 15;
+//	this.enemy.rangeRight = 15;
+//	game.physics.arcade.collide(this.enemy, layer);
+//	this.enemy.revive();
 		}
 		
 	if(this.totalScore == 300){
