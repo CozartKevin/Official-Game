@@ -14,7 +14,7 @@ var loadState= {
 		//mysprite = this.game.add.sprite(64, 64, 'player');
 		//mysprite.frame = 50;
 		game.load.image('bullet', 'assets/bullet.png');
-		game.load.spritesheet('enemy', 'assets/Chicken_Sheet.png', 32, 32);
+		game.load.spritesheet('chicken', 'assets/Chicken_Sheet.png', 32, 32);
 		
 		
 	},

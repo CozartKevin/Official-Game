@@ -10,7 +10,11 @@ var scrollPos = 0.0;
 var bullets;
 var fireRate = 300;
 var nextFire = 0.5;
+var score = 0;
+var scoreText;
+var scoreString = '';	
 
+var stateText = '';
 game.state.add('boot', bootState);
 game.state.add('load', loadState);
 game.state.add('menu', menuState);

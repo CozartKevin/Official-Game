@@ -22,11 +22,11 @@ var menuState = {
 	var enterKey = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 	
 	enterKey.onDown.addOnce(this.start, this);
-		
+
 	},
 	
 	start: function(){
-		
+			
 		game.state.start('play',false);
 	},
 	
